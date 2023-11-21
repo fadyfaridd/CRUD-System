@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+
+<body>
+    <div class="container py-4">
+        <h2 class="text-center pb-3">Product Management System</h2>
+        <label for="productName" class="my-2">Product Name:</label>
+        <input type="text" class="form-control mb-2" oninput="validateProductName()" id="productName">
+        <label for="productPrice" class="my-2">Product Price:</label>
+        <input type="number" class="form-control mb-2" id="productPrice">
+        <label for="productCategory" class="my-2">Product Category:</label>
+        <select class="form-control" id="productCategory">
+            <option value="Mobile">Mobile</option>
+            <option value="TV">TV</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Other">Other</option>
+        </select>
+        <label for="productDesc" class="my-2">Product Description:</label>
+        <textarea type="text" class="form-control mb-3" id="productDesc"></textarea>
+        <button class="btn btn-info" id="addBtn" onclick="addProduct()">Add Product</button>
+        <button class="btn btn-primary d-none" id="updateBtn" onclick="edit()">Update</button>
+    </div>
+
+    <div class="w-50 mx-auto p-4">
+        <input type="text" oninput="searchProduct(this.value)" placeholder="Search by name" class="form-control mt-1">
+    </div>
+    <div class="container w-75 pt-3">
+        <table class="table table-hover text-center">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">Index</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Price</th>
+                    <th scope="col">Product Category</th>
+                    <th scope="col">Product Desc</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody id="tablebody">
+            </tbody>
+        </table>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
